@@ -14,7 +14,7 @@ namespace MediatRPublishExample
             var services = new ServiceCollection();
 
             services.AddScoped<ServiceFactory>(p => p.GetService);
-            services.AddSingleton<IMediator, Mediator>();
+            services.AddSingleton<IMediator, CustomMediator>();
 
             services.AddTransient<INotificationHandler<PingMe>, PingMeOne>();
             services.AddTransient<INotificationHandler<PingMe>, PingMeTwo>();
